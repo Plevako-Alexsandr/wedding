@@ -1,14 +1,26 @@
+import "@/styles"
+
+import Header from "./layouts/Header"
+import Content from "./layouts/Content"
+import Footer from "./layouts/Footer"
+import Hero from "./sections/Hero"
 
 
 function App() {
 
   return (
-    <div className="hi">
-      <h1>Привет, мир!</h1>
+    <>
+      <Header />
 
-    </div>
+      <Content>
+        <Hero />
+        <Hero />
+      </Content>
+
+      <Footer />
+    </>
   )
 
 }
 
-export default App
+export default App;

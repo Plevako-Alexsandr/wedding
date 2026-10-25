@@ -1,0 +1,23 @@
+.field {
+  display: flex;
+  align-items: center;
+  
+  &__label {
+    font-size: 16px;
+  }
+
+  &__input {
+    height: var(--input-height-l);
+    width: 100%;
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    padding-inline: 16px 12px;
+    color: var(--color-gray-60);
+
+    &:hover,
+    &:focus {
+      border-color: var(--color-gray-80);
+    }
+  }
+
+}
