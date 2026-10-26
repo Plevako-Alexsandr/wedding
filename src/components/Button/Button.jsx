@@ -4,12 +4,13 @@ import clsx from "clsx"
 
 const Button = (props) => {
   const {
-    className
+    className,
+    children
   } = props;
 
   return (
     <button className={clsx(className, "button")}>
-      Нажми на меня
+      {children}
     </button>
   );
 };

@@ -5,8 +5,12 @@ const Footer = () => {
 
 
   return (
-    <footer className="footer container">
-      <h1>footer</h1>
+    <footer className="footer">
+      <div className="footer__wrapper container">
+        <h1>Ждем вас!
+          Александр & Мария</h1>
+      </div>
+
     </footer>
   );
 };

@@ -11,10 +11,11 @@ const Field = (props) => {
 
 
   const {
+    className,
     id,
     placeholderText,
     isLabelHidden,
-    // type,
+    type,
     children,
     // value,
     // onChange
@@ -25,6 +26,7 @@ const Field = (props) => {
     <div className="field">
       <label
         className={clsx(
+          className,
           "field__label", 
           isLabelHidden ? "visually-hidden" : null
         )}
@@ -36,7 +38,7 @@ const Field = (props) => {
         className="field__input"
         id={id}
         placeholder={placeholderText}
-        // type={type}
+        type={type}
         required
         // value={value}
         // onChange={onChange}
