@@ -4,6 +4,9 @@ import Field from "@/components/Field";
 
 
 const GuestRSVP = () => {
+
+
+
   return (
     <section className="guest-rsvp">
       <div className="guest-rsvp__wrapper container">
@@ -12,8 +15,10 @@ const GuestRSVP = () => {
             Анкета гостя
           </h2>
 
-          <div className="guest-rsvp__data">
-
+          <div className="guest-rsvp__username">
+            <p className="guest-rsvp__username-title">
+              Введите имя:
+            </p>
             <Field
               id="guest-name"
               type="text"
@@ -24,17 +29,31 @@ const GuestRSVP = () => {
 
           </div>
 
-          <div className="guest-rsvp__email">
-            <Field
-              id="guest-choice"
-              type="checkbox"
-              placeholderText="Имя"
-              isLabelHidden={false}
-            >
-              <p>Имя Фамилия</p>
+          <div className="guest-rsvp__options">
 
-            </Field>
+            <p className="guest-rsvp__options-title">
+              Сможете ли вы прийти?
+            </p>
+
+            <fieldset className="guest-rsvp__rsvp-options">
+              <legend className="visually-hidden">Выберите вариант присутствия</legend>
+
+              {['Да', 'Пока не знаю', 'Нет'].map((label, idx) => (
+                <label key={idx} className="rsvp-option">
+                  <input
+                    type="radio"
+                    name="attendance"         
+                    value={['yes', 'maybe', 'no'][idx]}
+                    className="rsvp-radio"
+                  />
+                  <span className="rsvp-label">{label}</span>
+                </label>
+              ))}
+            </fieldset>
+
           </div>
+
+
         </form>
       </div>
     </section>

@@ -13,7 +13,7 @@ const Field = (props) => {
   const {
     className,
     id,
-    placeholderText,
+    placeholderText = "",
     isLabelHidden,
     type,
     children,
