@@ -1,21 +1,75 @@
 .header {
+  position: sticky;
+  top: 0;
   padding-block: 20px;
+  background-color: var(--color-white-80);
+
 
   &__wrapper {}
 
   &__nav {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
+
+    color: var(--color-black-80);
+    margin-inline: fluid(40, 20);
+  }
+
+  &__menu {
+    color: inherit;
   }
 
   &__list {
     @include flex-center;
+
     gap: 20px;
   }
 
-  &__item {}
+  &__item {
+    text-wrap: nowrap;
+  }
 
-  &__link {}
+  &__link {
+
+    border: 1px solid transparent;
+    padding: 3px;
+
+    
+    &:hover {
+      position: relative;
+      color: var(--color-gold-60);
+
+      &::before {
+
+        @include abs-x;
+
+        content: "";
+
+        top: 80%;
+        background-color: red;
+
+        height: 2px;
+        width: 100%;
+
+      }
+
+    }
+
+    &:active {
+      color: var(--color-black-80);
+    }
+
+    &:focus-visible {
+      border-color: black;
+    }
+
+
+  }
+
+
+
 
 }

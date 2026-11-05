@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__wrapper container">
-        <h1>Ждем вас!
+        <h1 className="footer__title">Ждем вас!
           Александр & Мария</h1>
       </div>
 

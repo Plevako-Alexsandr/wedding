@@ -6,9 +6,9 @@ const CountDown = () => {
   return (
     <section className="count-down">
       <div className="count-down__wrapper container">
-        <h2 className="count-down__title">
+        <header className="count-down__title">
           Дорогие родные и друзья!
-        </h2>
+        </header>
         <span>
           18 дней
         </span>
