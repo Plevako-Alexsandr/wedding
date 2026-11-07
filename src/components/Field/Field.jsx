@@ -17,8 +17,8 @@ const Field = (props) => {
     isLabelHidden,
     type,
     children,
-    // value,
-    // onChange
+    value,
+    onChange
   } = props
 
 
@@ -40,8 +40,8 @@ const Field = (props) => {
         placeholder={placeholderText}
         type={type}
         required
-        // value={value}
-        // onChange={onChange}
+        value={value}
+        onChange={onChange}
       />
     </div>
 

@@ -1,4 +1,6 @@
-import "@/styles"
+import "./styles"
+
+import { HooksProvider } from "./context/HooksProvider"
 
 import Header from "./layouts/Header"
 import Content from "./layouts/Content"
@@ -14,7 +16,8 @@ import GuestRSVP from "./sections/GuestRSVP"
 function App() {
 
   return (
-    <>
+    <HooksProvider>
+
       <Header />
 
       <Content>
@@ -27,7 +30,8 @@ function App() {
       </Content>
 
       <Footer />
-    </>
+
+    </HooksProvider>
   )
 
 }

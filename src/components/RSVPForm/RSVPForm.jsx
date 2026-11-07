@@ -1,13 +1,39 @@
-
-import Field from "@/components/Field";
 import clsx from "clsx";
 
+
+import { useContext } from "react";
+import { HooksContext } from "@/context/HooksProvider";
+
+import Field from "@/components/Field";
+import Button from "@/components/Button";
 
 const RSVPForm = (props) => {
 
   const {
     className
   } = props
+
+  const {
+    guestNameHandler,
+    guestName,
+    setGuestName,
+    quantity,
+    handleQuantityChange
+  } = useContext(HooksContext);
+
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    guestNameHandler()
+  }
+
+  const onBlur = (e) => {
+    e.preventDefault()
+
+    console.log("On blur");
+    
+  }
 
 
   const attendanceVariants = [
@@ -18,7 +44,12 @@ const RSVPForm = (props) => {
 
   return (
 
-    <form action="" className={clsx("rsvp-form", className)}>
+    <form
+      action=""
+      className={clsx("rsvp-form", className)}
+      onSubmit={onSubmit}
+    >
+
       <header className="rsvp-form__title">
         Анкета гостя
       </header>
@@ -32,6 +63,8 @@ const RSVPForm = (props) => {
           type="text"
           placeholderText="Иванов Иван"
           isLabelHidden
+          value={guestName}
+          onChange={(e) => setGuestName(e.target.value)}
         />
 
 
@@ -66,6 +99,33 @@ const RSVPForm = (props) => {
 
       </div>
 
+      <div className="rsvp-form__quantity">
+
+        <p className="rsvp-form__quantity-title">
+          Сколько вас будет?
+        </p>
+
+        <Button
+          onClick={() => handleQuantityChange(quantity + 1)}
+        >
+          +
+        </Button>
+        <span>{quantity}</span>
+        <Button
+          onClick={() => handleQuantityChange(quantity - 1)}
+        >
+          -
+        </Button>
+
+
+      </div>
+
+      <Button
+        className="rsvp-form__button"
+        type="submit"
+      >
+        Отправить ответ
+      </Button>
 
     </form>
   )
