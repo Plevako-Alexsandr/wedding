@@ -1,4 +1,5 @@
 
+
 import { useState } from "react";
 
 
@@ -6,32 +7,31 @@ import { useState } from "react";
 const useRSVP = () => {
 
 
-  const [quantity, setQuantity] = useState(0);
   const [guestName, setGuestName] = useState("");
-
+  const [quantity, setQuantity] = useState(1);
+  const [attendance, setAttendance] = useState(null);
+  const [congratulations, setCongratulations] = useState("");
 
   const guestNameHandler = () => {
 
-    console.log("Guest Name:", guestName);
 
-    if (guestName.trim() === "") {
-      console.log("Please enter a valid name.");
-      return;
-    }
-    
-    // Настроить
-    if (guestName.indexOf(Number)) {
+    if (guestName.trim().length === 0) {
       alert("Please enter a valid name.");
       return;
     }
-
   }
 
   const handleQuantityChange = (newQuantity) => {
-    if (newQuantity < 0) {
-      newQuantity = 0;
+    if (newQuantity <= 1) {
+      newQuantity = 1;
     }
     setQuantity(newQuantity);
+  }
+
+
+  const onSubmitHundler = () => {
+    console.log(guestName, attendance, quantity, congratulations);
+
   }
 
   return {
@@ -40,6 +40,11 @@ const useRSVP = () => {
     setGuestName,
     quantity,
     handleQuantityChange,
+    attendance,
+    setAttendance,
+    congratulations,
+    setCongratulations,
+    onSubmitHundler
   };
 };
 

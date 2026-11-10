@@ -14,6 +14,11 @@ export const HooksProvider = ({ children }) => {
     guestName,
     setGuestName,
     handleQuantityChange,
+    attendance,
+    setAttendance,
+    congratulations,
+    setCongratulations,
+    onSubmitHundler
   } = useRSVP();
 
   return (
@@ -24,6 +29,11 @@ export const HooksProvider = ({ children }) => {
         setGuestName,
         quantity,
         handleQuantityChange,
+        attendance,
+        setAttendance,
+        congratulations,
+        setCongratulations,
+        onSubmitHundler
       }}
     >
       {children}

@@ -21,11 +21,11 @@ function App() {
       <Header />
 
       <Content>
-        <Hero />
+        {/* <Hero />
         <Greeting />
         <DailyPlane />
         <CountDown />
-        <MeetingPlace />
+        <MeetingPlace /> */}
         <GuestRSVP />
       </Content>
 

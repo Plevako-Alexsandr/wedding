@@ -1,10 +1,11 @@
 .field {
+
+  @include fluid-text(22, 18);
+
+
   display: flex;
   align-items: center;
   
-  &__label {
-    font-size: 16px;
-  }
 
   &__input {
     height: var(--input-height-l);
@@ -12,11 +13,12 @@
     border: var(--input-border);
     border-radius: var(--input-border-radius);
     padding-inline: 16px 12px;
-    color: var(--color-gray-60);
+    color: var(--color-black-100);
 
     &:hover,
     &:focus {
-      border-color: var(--color-gray-80);
+      border-color: var(--color-black-90);
+      transition-duration: var(--transition-duration);
     }
   }
 

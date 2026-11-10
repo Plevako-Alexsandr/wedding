@@ -15,6 +15,7 @@ const Field = (props) => {
     id,
     placeholderText = "",
     isLabelHidden,
+    isInputRequired = false,
     type,
     children,
     value,
@@ -39,7 +40,7 @@ const Field = (props) => {
         id={id}
         placeholder={placeholderText}
         type={type}
-        required
+        required={isInputRequired}
         value={value}
         onChange={onChange}
       />

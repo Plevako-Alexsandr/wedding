@@ -1,0 +1,15 @@
+.title-style {
+
+  @include fluid-text(25, 18);
+  font-weight: 500;
+
+  &--main {
+    @include fluid-text(25, 18);
+    font-weight: 500;
+  }
+
+  &--secondary {
+    @include fluid-text(48, 30);
+    font-weight: 500;
+  }
+}

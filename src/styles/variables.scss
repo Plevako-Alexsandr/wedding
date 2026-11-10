@@ -32,16 +32,25 @@
 
   --label-height-l: 46px;
 
-  --input-height-l: 40px;
+  --input-height-l: 44px;
   --input-height-xl: 46px;
-  --input-border: 2px solid var(--color-white-60);
-  --input-border-radius: 8px;
+  --input-border: 3px solid var(--color-white-60);
+  --input-border-radius: 10px;
 
-  --border: var(--border-size-l) solid var(--color-white-60);
-  --border-size-l: 1px;
+  --border: var(--border-size-x) solid var(--color-white-60);
+  --border-size-xxl: 5px;
+  --border-size-xl: 3px;
+  --border-size-l: 3px;
+  
+  --border-radius-xxl: 30px;
+  --border-radius-xl: 15px;
+  --border-radius-l: 10px;
+  --border-radius-m: 7px;
+  --border-radius-s: 3px;
+
+
 
   --container-width: #{$container-desktop-width}px;
-  --container-margin-y: 72px;
   --container-padding-x: 15px;
 
   --transition-duration: 0.3ms;
