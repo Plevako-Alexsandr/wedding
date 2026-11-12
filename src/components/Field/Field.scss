@@ -10,12 +10,15 @@
   &__input {
     height: var(--input-height-l);
     width: 100%;
-    border: var(--input-border);
-    border-radius: var(--input-border-radius);
+    border: var(--input-border-size-s) solid var(--color-white-60);
+    border-radius: var(--input-border-radius-l);
     padding-inline: 16px 12px;
     color: var(--color-black-100);
 
-    &:hover,
+    &:hover {
+      border-color: var(--color-gray-80);
+    }
+
     &:focus {
       border-color: var(--color-black-90);
       transition-duration: var(--transition-duration);

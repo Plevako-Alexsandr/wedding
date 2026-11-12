@@ -8,6 +8,7 @@
   --color-black-90: #1E1E1E;
   --color-black-80: #2C2C2C;
 
+  --color-gray-90: #75757500;
   --color-gray-80: #757575;
   --color-gray-60: #B3B3B3;
 
@@ -20,27 +21,23 @@
 
   --link-hight-la: 44px;
 
+  --button-border-size-s: 3px;
 
+  --button-height-xxl: 44px;
   --button-height-m: 16px;
-  --button-height-xl: 40px;
-  --button-border-radius-l: 4px;
   --button-border-radius-xl: 8px;
+  --button-border-radius-l: 4px;
   --button-padding-inline: 12px;
-  
-  --icon-button-height-xl: 20px;
-  --icon-button-width: 20px;
 
   --label-height-l: 46px;
 
   --input-height-l: 44px;
-  --input-height-xl: 46px;
   --input-border: 3px solid var(--color-white-60);
-  --input-border-radius: 10px;
+  --input-border-size-s: 3px;
+  --input-border-radius-l: 10px;
 
-  --border: var(--border-size-x) solid var(--color-white-60);
-  --border-size-xxl: 5px;
-  --border-size-xl: 3px;
-  --border-size-l: 3px;
+  --border-size-m: 5px;
+  --border-size-s: 3px;
   
   --border-radius-xxl: 30px;
   --border-radius-xl: 15px;
@@ -53,5 +50,5 @@
   --container-width: #{$container-desktop-width}px;
   --container-padding-x: 15px;
 
-  --transition-duration: 0.3ms;
+  --transition-duration: 150ms;
 }

@@ -1,0 +1,21 @@
+.title-style {
+
+  font-weight: 500;
+
+  &--mode {
+    &-default {
+      @include fluid-text(25, 18);
+
+      @include tablet {
+        @include fluid-text(20, 18);
+      }
+    }
+
+    &-secondary {
+      @include fluid-text(48, 30);
+      font-weight: 500;
+    }
+  }
+
+
+}

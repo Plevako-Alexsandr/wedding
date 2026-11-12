@@ -9,22 +9,31 @@ export const HooksContext = createContext({});
 
 export const HooksProvider = ({ children }) => {
   const {
-    quantity,
-    guestNameHandler,
     guestName,
     setGuestName,
+    quantity,
     handleQuantityChange,
     attendance,
     setAttendance,
     congratulations,
     setCongratulations,
-    onSubmitHundler
+    onSubmitHandler,
+    dirtyGuestName,
+    setDirtyGuestName,
+    guestNameError,
+    setGuestNameError,
+    onBlurHandler,
+    guestPhone,
+    setGuestPhone,
+    dirtyGuestPhone,
+    setDirtyGuestPhone,
+    guestPhoneError,
+    setGuestPhoneError,
   } = useRSVP();
 
   return (
     <HooksContext.Provider
       value={{
-        guestNameHandler,
         guestName,
         setGuestName,
         quantity,
@@ -33,7 +42,18 @@ export const HooksProvider = ({ children }) => {
         setAttendance,
         congratulations,
         setCongratulations,
-        onSubmitHundler
+        onSubmitHandler,
+        dirtyGuestName,
+        setDirtyGuestName,
+        guestNameError,
+        setGuestNameError,
+        onBlurHandler,
+        guestPhone,
+        setGuestPhone,
+        dirtyGuestPhone,
+        setDirtyGuestPhone,
+        guestPhoneError,
+        setGuestPhoneError,
       }}
     >
       {children}

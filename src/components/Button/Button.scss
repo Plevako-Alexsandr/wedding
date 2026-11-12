@@ -1,55 +1,64 @@
 .button {
   @include flex-center;
 
-  height: var(--button-height-xl);
-  padding-inline: 12px;
-  border-radius: var(--border-radius);
+  height: var(--button-height-xxl);
 
-  &-mode--default {
+  &--mode {
+    &-default {
+      color: var(--color-white-80);
+      background-color: var(--color-gray-60);
 
-    border: var(--border);
-    padding-block: 0;
+      border: var(--button-border-size-s) solid var(--color-white-60);
+      border-radius: var(--button-border-radius-xl);
+      padding-block: 0;
+      padding-inline: 12px;
 
-    color: var(--color-white-80);
-    background-color: var(--color-black-80);
+      transition:
+        background-color var(--transition-duration) ease,
+        border-color var(--transition-duration) ease,
+        color var(--transition-duration) ease;
 
-    &:hover {
-      border-color: var(--color-black-80);
-      color: var(--color-black-80);
-      background-color: var(--color-white-80);
+      @include hover {
+        border-color: var(--color-black-80);
+        color: var(--color-black-80);
+        background-color: var(--color-white-80);
+      }
+
+      &:focus-visible {
+        border-color: var(--color-black-80);
+        color: var(--color-black-80);
+        background-color: var(--color-white-80);
+      }
+
+      &:active {
+        color: var(--color-white-100);
+        background-color: var(--color-black-100);
+      }
+
     }
 
-    &:active {
-      color: var(--color-white-100);
-      background-color: var(--color-black-100);
-    }
-
-  }
-
-  &-mode--icon {
-    background-color: transparent;
-    border: var(--button--icon-border);
-    border-color: transparent;
-    height: var(--button-height-xll);
-
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-
-    &:hover {
-      color: var(--color-white-60);
-      background: var(--color-black-80);
-    }
-
-    &:active {
+    &-icon {
+      background-color: transparent;
       border: var(--button--icon-border);
+      border-color: transparent;
 
-      color: var(--color-white-100);
-      background-color: var(--color-black-100);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+
+      &:hover {
+        color: var(--color-white-60);
+        background: var(--color-black-80);
+      }
+
+      &:active {
+        border: var(--button--icon-border);
+
+        color: var(--color-white-100);
+        background-color: var(--color-black-100);
+      }
     }
-
   }
-
 
 }

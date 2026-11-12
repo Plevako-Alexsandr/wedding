@@ -13,13 +13,15 @@ const Field = (props) => {
   const {
     className,
     id,
+    name,
     placeholderText = "",
     isLabelHidden,
     isInputRequired = false,
     type,
     children,
     value,
-    onChange
+    onChange,
+    onBlur
   } = props
 
 
@@ -38,11 +40,13 @@ const Field = (props) => {
       <input
         className="field__input"
         id={id}
+        name={name}
         placeholder={placeholderText}
         type={type}
         required={isInputRequired}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
       />
     </div>
 

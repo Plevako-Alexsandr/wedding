@@ -8,17 +8,25 @@
     max-width: 700px;
     margin-inline: auto;
     padding: 10px 30px 30px;
-    border: var(--border-size-xxl) solid var(--color-white-60);
+    border: var(--border-size-s) solid var(--color-white-60);
     border-radius: var(--border-radius-l);
+
+
+    @include tablet {
+      gap: 2px;
+      padding: 10px 25px 25px;
+    }
+
   }
 
-  &__username {}
+  &__user {}
 
 
   &__title {
 
     text-align: center;
     text-wrap: nowrap;
+
   }
 
   &__subtitle {
@@ -45,41 +53,46 @@
       @include flex-center;
 
       height: 44px;
-      border: var(--border-size-xl) solid var(--color-white-60);
+      border: var(--border-size-s) solid var(--color-white-60);
       border-radius: var(--border-radius-l);
 
-      &:hover, 
+      &:hover,
       &:focus {
         background-color: var(--color-white-100);
-        border-color: var(--color-black-90);
+        border-color: var(--color-gray-80);
         transition-duration: var(--transition-duration);
       }
 
-     &:has(.rsvp-form__attendance-radio:checked) {
-      background-color: var(--color-white-100);
-      border-color: var(--color-black-90);
-    }
+      &:has(.rsvp-form__attendance-radio:checked) {
+        background-color: var(--color-white-100);
+        border-color: var(--color-black-90);
+      }
 
-    &:has(.rsvp-form__attendance-radio:focus-visible) {
-      outline: 2px solid var(--color-black-90);
-      outline-offset: 2px;
-    }
+      &:has(.rsvp-form__attendance-radio:focus-visible) {
+        outline: 2px solid var(--color-black-90);
+        outline-offset: 2px;
+      }
 
     }
 
     &-radio {
       &:checked {
-      border-color: var(--color-black-90);
-      background: var(--color-black-90);
-      box-shadow: inset 0 0 0 3px var(--color-white-100); /* точка внутри кружка */
-    }
+        border-color: var(--color-black-90);
+        background: var(--color-black-90);
+        box-shadow: inset 0 0 0 3px var(--color-white-100);
+        /* точка внутри кружка */
+      }
     }
 
     &-option {
-      
+
       @include fluid-text(20, 18);
-      
+
       text-wrap: nowrap;
+
+      @include mobile {
+        @include fluid-text(18, 16)
+      }
     }
 
   }
@@ -95,9 +108,20 @@
       width: 100%;
       height: 100px;
       padding: 10px;
-      border: var(--input-border);
-      border-radius: var(--input-border-radius);
+      border: var(--border-size-s) solid var(--color-white-60);
+      border-radius: var(--border-radius-l);
       resize: none;
+
+
+      &:hover {
+        border-color: var(--color-gray-80);
+      }
+
+      &:focus,
+      &:focus-visible {
+        border-color: var(--color-black-90);
+      }
+
     }
   }
 

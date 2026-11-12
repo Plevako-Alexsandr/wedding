@@ -3,10 +3,10 @@
 
 
 // Breakpoints
-$bp-laptop: 1536px;
-$bp-tablet: 1023px;
-$bp-mobile: 758px;
-$bp-mobile-s: 480px;
+$bp-laptop: 1440px;
+$bp-tablet: 1026px;
+$bp-mobile: 768px;
+$bp-mobile-s: 641px;
 
 @mixin laptop-above {
   @media (width > $bp-laptop) {

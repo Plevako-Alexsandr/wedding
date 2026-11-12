@@ -11,7 +11,7 @@ import Greeting from "./sections/Greeting"
 import MeetingPlace from "./sections/MeetingPlace"
 import DailyPlane from "./sections/DailyPlane"
 import CountDown from "./sections/CountDown"
-import GuestRSVP from "./sections/GuestRSVP"
+import Guest from "./sections/Guest"
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
         <DailyPlane />
         <CountDown />
         <MeetingPlace /> */}
-        <GuestRSVP />
+        <Guest />
       </Content>
 
       <Footer />

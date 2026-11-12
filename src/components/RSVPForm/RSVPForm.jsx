@@ -7,6 +7,7 @@ import { HooksContext } from "@/context/HooksProvider";
 
 import Field from "@/components/Field";
 import Button from "@/components/Button";
+import TitleStyle from "@/components/TitleStyle";
 
 const RSVPForm = (props) => {
 
@@ -15,7 +16,6 @@ const RSVPForm = (props) => {
   } = props
 
   const {
-    guestNameHandler,
     guestName,
     setGuestName,
     quantity,
@@ -24,46 +24,55 @@ const RSVPForm = (props) => {
     setAttendance,
     congratulations,
     setCongratulations,
-    onSubmitHundler
+    onSubmitHandler,
+    dirtyGuestName,
+    setDirtyGuestName,
+    guestNameError,
+    setGuestNameError,
+    onBlurHandler,
+    guestPhone,
+    setGuestPhone,
+    dirtyGuestPhone,
+    setDirtyGuestPhone,
+    guestPhoneError,
+    setGuestPhoneError,
   } = useContext(HooksContext);
+
+
+
+  const onBlur = (e) => {
+    e.preventDefault()
+
+    onBlurHandler(e)
+
+  }
 
 
   const onSubmit = (e) => {
     e.preventDefault()
 
-    onSubmitHundler();
+    onSubmitHandler();
   }
-
-  const onBlur = (e) => {
-    e.preventDefault()
-
-    console.log("On blur");
-
-  }
-
 
   const attendanceVariants = [
     {
       title: 'Приду',
       variant: 'yes',
-      isChecked: true,
     },
     {
       title: 'Пока не знаю',
       variant: 'maybe',
-      isChecked: false,
     },
     {
       title: 'Не смогу',
       variant: 'no',
-      isChecked: false
     },
   ];
 
   return (
 
     <form
-      id="RSVPForm"
+      id="rsvp-form"
       action=""
       className={clsx("rsvp-form", className)}
       onSubmit={onSubmit}
@@ -72,25 +81,56 @@ const RSVPForm = (props) => {
       <div className="rsvp-form__wrapper">
         <header className="rsvp-form__header">
           <h2 className="rsvp-form__title">Анкета гостя</h2>
-
+          <h3 className="rsvp-form__subtitle">
+            Подтвердите присутствие до 12 августа
+          </h3>
         </header>
 
-        <h3 className="rsvp-form__subtitle">
-          Подтвердите присутствие до 12 августа
-        </h3>
 
-        <div className="rsvp-form__username">
-          <p className="rsvp-form__username-title title-style">
+
+        <div className="rsvp-form__user">
+          <TitleStyle
+            className="rsvp-form__user-title>"
+            titleMode="default"
+          >
             Введите имя:
-          </p>
+          </TitleStyle>
+
+          {(dirtyGuestName && guestNameError) && <div style={{ color: 'red' }}> {guestNameError}</div>}
           <Field
             id="guest-name"
+            name="guest-name"
             type="text"
             placeholderText="Иванов Иван"
             isLabelHidden
             // isInputRequired="true"
             value={guestName}
             onChange={(e) => setGuestName(e.target.value)}
+            onBlur={(e) => onBlur(e)}
+          />
+
+
+        </div>
+
+        <div className="rsvp-form__phone">
+
+          <TitleStyle
+            className="rsvp-form__phone-title>"
+            titleMode="default"
+          >
+            Введите номер телефона
+          </TitleStyle>
+
+          {(dirtyGuestPhone && guestPhoneError) && <div style={{ color: 'red' }}> {guestPhoneError}</div>}
+          <Field
+            id="guest-phone"
+            name="guest-phone"
+            type="tel"
+            placeholderText="+123456789"
+            isLabelHidden
+            value={guestPhone}
+            onChange={(e) => setGuestPhone(e.target.value)}
+            onBlur={(e) => onBlur(e)}
           />
 
 
@@ -98,14 +138,17 @@ const RSVPForm = (props) => {
 
         <div className="rsvp-form__attendance">
 
-          <p className="rsvp-form__attendance-title title-style">
+          <TitleStyle
+            className="rsvp-form__attendance-title>"
+            titleMode="default"
+          >
             Сможете ли вы прийти?
-          </p>
+          </TitleStyle>
 
           <fieldset className="rsvp-form__attendance-list">
             <legend className="visually-hidden">Выберите вариант присутствия</legend>
 
-            {attendanceVariants.map((option, index) => { 
+            {attendanceVariants.map((option, index) => {
 
               return (
                 <label key={index} className="rsvp-form__attendance-item">
@@ -130,9 +173,12 @@ const RSVPForm = (props) => {
         <div className="rsvp-form__quantity">
 
           <div className="rsvp-form__quantity-wrapper">
-            <p className="rsvp-form__quantity-title title-style">
+            <TitleStyle
+              className="rsvp-form__quantity-title>"
+              titleMode="default"
+            >
               Сколько вас будет?
-            </p>
+            </TitleStyle>
 
             <Button
               onClick={() => handleQuantityChange(quantity + 1)}
@@ -151,9 +197,12 @@ const RSVPForm = (props) => {
         </div>
 
         <div className="rsvp-form__congratulations">
-          <p className="rsvp-form__congratulations-title title-style">
+          <TitleStyle
+            className="rsvp-form__congratulations-title>"
+            titleMode="default"
+          >
             Комментарий / пожелания
-          </p>
+          </TitleStyle>
 
           <textarea
             className="rsvp-form__congratulations-textarea"
@@ -174,6 +223,7 @@ const RSVPForm = (props) => {
         <Button
           className="rsvp-form__button"
           type="submit"
+          buttonMode="default"
         >
           Отправить ответ
         </Button>
