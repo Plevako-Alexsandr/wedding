@@ -1,0 +1,14 @@
+.layout {
+  @include fluid-text(18, 16);
+
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base), sans-serif;
+  font-weight: 400;
+  color: var(--color-black-80);
+  background-color: var(--color-white-70);
+  min-height: 100vh;
+  // overflow-x: hidden;
+
+
+}

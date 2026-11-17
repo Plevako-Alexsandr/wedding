@@ -3,11 +3,11 @@ import clsx from "clsx";
 import "./RSVPForm.scss"
 
 import { useContext } from "react";
-import { HooksContext } from "@/context/HooksProvider";
+import { HooksContext } from "@/app/providers/HooksProvider";
 
-import Field from "@/components/Field";
-import Button from "@/components/Button";
-import TitleStyle from "@/components/TitleStyle";
+import Field from "@/shared/Field";
+import Button from "@/shared/Button";
+import TitleStyle from "@/shared/TitleStyle";
 
 const RSVPForm = (props) => {
 
@@ -118,7 +118,7 @@ const RSVPForm = (props) => {
             className="rsvp-form__phone-title>"
             titleMode="default"
           >
-            Введите номер телефона
+            Введите номер телефона:
           </TitleStyle>
 
           {(dirtyGuestPhone && guestPhoneError) && <div style={{ color: 'red' }}> {guestPhoneError}</div>}
@@ -126,7 +126,7 @@ const RSVPForm = (props) => {
             id="guest-phone"
             name="guest-phone"
             type="tel"
-            placeholderText="+123456789"
+            placeholderText="+7 (xxx) xxx-xx-xx"
             isLabelHidden
             value={guestPhone}
             onChange={(e) => setGuestPhone(e.target.value)}

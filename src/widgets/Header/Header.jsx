@@ -1,11 +1,8 @@
 import './Header.scss';
 
-import Link from '@/components/Link';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Link from '@/shared/RouterLink';
 
 const Header = () => {
-
-
 
   const navLinks = [
     { name: 'Главная', href: '#' },
@@ -28,7 +25,7 @@ const Header = () => {
             {navLinks.map((link, index) => (
               <li key={index} className="header__item header__menu-item">
                 <Link
-                  href={link.href}
+                  to={link.href}
                   className="header__link header__menu-link"
                 >
                   {link.name}
@@ -36,25 +33,13 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          {/* <Routes> */}
 
             <ul className="header__list header__actions">
               {actionLinks.map((link, index) => (
-                <li key={index} className="header__item header__actions-item">
-
-                  {/* <Route
-                    path={link.href}
-                    element={<LoginPage />}
-                  /> */}
-
-
-
-
-
-                  
+                <li key={index} className="header__item header__actions-item">      
 
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className="header__link header__actions-link"
                   >
                     {link.name}
@@ -66,8 +51,6 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-
-          {/* </Routes > */}
 
         </nav>
 

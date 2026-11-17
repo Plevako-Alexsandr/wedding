@@ -1,7 +1,7 @@
 
 import { createContext } from "react";
 
-import useRSVP from "@/hooks/useRSVP";
+import useRSVP from "@/features/rsvp/model/useRSVP";
 
 
 export const HooksContext = createContext({});

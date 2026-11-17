@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
-  base: '/wedding/',
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: [{
@@ -41,7 +41,7 @@ export default defineConfig({
       scss: {
         // Автоматически подключаем helpers во все SCSS-файлы
         additionalData: `
-          @use '@/styles/helpers' as *;
+          @use '@/app/styles/helpers' as *;
         `,
         // Убираем варнинги от старого API
         silenceDeprecations: ['legacy-js-api'],

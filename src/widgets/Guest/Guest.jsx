@@ -1,5 +1,5 @@
 
-import RSVPForm from "@/components/RSVPForm";
+import RSVPForm from "@/features/rsvp/ui";
 
 
 
